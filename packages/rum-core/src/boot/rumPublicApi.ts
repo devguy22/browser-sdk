@@ -264,10 +264,6 @@ export function makeRumPublicApi(
       return false
     }
 
-    if (isLocalFile()) {
-      display.error('Execution is not allowed in the current context.')
-      return false
-    }
     return true
   }
 
@@ -287,9 +283,5 @@ export function makeRumPublicApi(
       clientToken: 'empty',
       sampleRate: 100,
     })
-  }
-
-  function isLocalFile() {
-    return window.location.protocol === 'file:'
   }
 }
